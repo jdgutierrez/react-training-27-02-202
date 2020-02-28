@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Footer, { ExtraFooter } from './footer';
+import ExtraContent from './extraContent';
+import Content from './content';
 
 function App() {
+  const [name, setName] = useState(undefined);
   return (
     <div className="App">
       <header className="App-header">
@@ -10,14 +14,10 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <input name='name' value="hi" onChange={(evt) => setName(evt.currentTarget.value)} />
+        <div>
+          {name}
+        </div>
       </header>
     </div>
   );
